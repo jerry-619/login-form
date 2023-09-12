@@ -9,9 +9,6 @@
 body{
     background: url("https://wallpapercave.com/wp/wp5230816.jpg");
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 .container{
     display: flex;
@@ -21,18 +18,32 @@ body{
 }
 .box{
     display: flex;
-    flex-direction: row;
     position: relative;
     padding: 60px 20px 30px 20px;
     height: 620px;
     width: 350px;
     background-color: transparent;
     border-radius: 30px;
-    -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(8px);
     border: 3px solid rgba(255, 255, 255, 0.2);
     overflow: hidden;
 
+}
+.socialicons{
+    position: absolute;
+    font-size: 25px;
+    top: 40px;
+    left: 32%;
+    letter-spacing: 10px;
+}
+
+.socialicons a{
+   text-decoration: none;
+   color: black;
+}
+.socialicons i:hover{
+    color: #8993d6;
+    cursor: pointer;
 }
 .box-login{
     position: absolute;
@@ -55,9 +66,7 @@ body{
     font-weight: 600;
     margin-bottom: 8px
 }
-.input-group{
-    width: 100%;
-}
+
 .input-field{
     margin: 12px 0;
     position: relative;
@@ -81,17 +90,11 @@ body{
     font-size: 15px;
     transition: .3s ease-in-out;
 }
-.input-box:focus ~ label,.input-box:valid ~ label{
+.input-box:focus ~ label{
     top: 2px;
     font-size: 10px;
     color: #c12828;
     font-weight: 500;
-}
-
-.eye-area{
-    position: absolute;
-    top: 25px;
-    right: 15px;
 }
 
 .input-submit{
@@ -105,24 +108,13 @@ body{
     color: #fff;
     box-shadow: 0px 4px 20px rgba(62, 9, 9, 0.145);
     cursor: pointer;
-    transition: .4s;
+
 }
 .input-submit:hover{
     
     box-shadow: 0px 4px 20px rgba(34, 32, 34, 0.52);
 }
 
-.remember{
-    display: flex;
-    font-size: 13px;
-    margin: 12px 0 30px 0;
-    color: #000;
-}
-.check{
-    margin-right: 8px;
-    width: 14px;
-    background-color: aqua;
-}
 
 .forgot{
     text-align: center;
@@ -142,10 +134,8 @@ body{
     width: 85%;
     height: 50px;
     background: rgba(255, 255, 255, 0.16);
-    backdrop-filter: blur(10px);
     border-radius: 10px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
 }
 .switch a{
     display: flex;
@@ -157,13 +147,13 @@ body{
     text-decoration: none;
     width: 50%;
     border-radius: 10px;
-    z-index: 10;
+    z-index: 1;
 }
-#btn{
+.btn-active{
     position: absolute;
     width: 145px;
     height: 50px;
-    background: linear-gradient(145deg,pink, rgb(182, 180, 180, 0.5));
+    background: linear-gradient(145deg,#ffc0cb, rgb(182, 180, 180, 0.5));
     border-radius: 10px;
     box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.1);
     transition: .5s ease-in-out;

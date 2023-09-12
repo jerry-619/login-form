@@ -11,7 +11,15 @@
 <body>
     
  <div class="container">
-    <div class="box" data-tilt data-tilt-glare data-tilt-max-glare="0.6" data-tilt-scale="1">
+    <div class="box" data-tilt>
+        <div class="socialicons">
+            <a href="https://google.com" target="_blank"> 
+                <i class="fa-brands fa-google-plus fa-beat"></i></a>
+                <a href="https://facebook.com" target="_blank">
+            <i class="fa-brands fa-facebook fa-beat"></i></a>
+            <a href="https://x.com" target="_blank">
+            <i class="fa-brands fa-twitter fa-beat"></i></a>
+        </div>
         <!------------------ Login Box --------------------->
         <div class="box-login" id="login">
 
@@ -19,29 +27,26 @@
                 <h3>Login Now</h3>
                 <small>We are happy to have you back.</small>
             </div>
-            <div class="input-group">
-                <div class="input-field">
-                    <input type="text" class="input-box" id="logEmail" required>
-                    <label for="logEmail">Email address</label>
+            <form>
+                <div class="input-group">
+                    <div class="input-field">
+                        <input type="text" class="input-box" id="logEmail" required>
+                        <label for="logEmail">Email address</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="input-box" id="logPassword" required>
+                        <label for="logPassword">Password</label>
+                    </div>
+    
+                    <div class="input-field">
+                        <input type="submit" class="input-submit" value="Log in">
+                    </div>
+                    <div class="forgot">
+                        <a href="#">Forgot password?</a>
+                    </div>
                 </div>
-                <div class="input-field">
-                    <input type="password" class="input-box" id="logPassword" required>
-                    <label for="logPassword">Password</label>
-                     <div class="eye-area">
-                            <div class="eye-box" onclick="myLogPassword()">
-                                
-                            </div>
-                     </div>
-                </div>
-
-                <div class="input-field">
-                    <input type="submit" class="input-submit" value="Sign In">
-                </div>
-                <div class="forgot">
-                    <a href="#">Forgot password?</a>
-                </div>
-            </div>
-
+            </form>
+            
         </div>
 
      <!-------------------- Register --------------------------->
@@ -52,6 +57,7 @@
             <h3>Sign Up, Now</h3>
             <small>We are happy to have you with us.</small>
         </div>
+        <form>
         <div class="input-group">
             <div class="input-field">
                 <input type="text" class="input-box" id="regUser" required>
@@ -64,24 +70,20 @@
             <div class="input-field">
                 <input type="password" class="input-box" id="regPassword" required>
                 <label for="regPassword">Password</label>
-                 <div class="eye-area">
-                        <div class="eye-box" onclick="myRegPassword()">
-                        </div>
-                 </div>
             </div>
             <div class="remember">
                 <input type="checkbox" id="formCheck" class="check">
                 <label for="formCheck"> I accept terms and conditions</label>
             </div>
             <div class="input-field">
-                <input type="submit" class="input-submit" value="Sign Up Now">
+                <input type="submit" class="input-submit" value="Register">
             </div>
-            
+          </form>  
         </div>
 
     </div>
 
-    <!------------------------ Switch -------------------------->
+    <!------------------------ Switch Button -------------------------->
       
     <div class="switch">
         <a href="#" class="login" onclick="login()">Login</a>
