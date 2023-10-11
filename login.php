@@ -12,7 +12,7 @@ if (isset($_POST['login'])) {
         $row = mysqli_fetch_assoc($result);
         if ($row) {
 
-            $_SESSION['username'] = true;
+            $_SESSION['username'] = $username;
             $_SESSION['start_time'] = time();
 
             if (isset($_POST['chk'])) {
