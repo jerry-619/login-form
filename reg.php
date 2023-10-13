@@ -12,9 +12,7 @@ if (isset($_POST['register'])) {
     $count = mysqli_num_rows($result);
 
     if ($count > 0) {
-        echo "<script>
-                     alert('Email Already Exists');
-                     </script>";
+        header("location: reg.php?alert=email_exists");
     } else {
         $hashed = md5($pass);
         $qurey = "INSERT INTO users (name, email, password) values ('$name', '$email', '$hashed')";
@@ -62,6 +60,15 @@ if (isset($_POST['register'])) {
                         <div class="input-field">
                             <input type="text" class="input-box" name="email" id="email" required>
                             <label for="email">Email address</label>
+                            <?php 
+                            if (isset($_GET['alert'])) {
+                             if ($_GET['alert'] == 'email_exists') {
+                                 echo <<< alert
+                                 <strong class="em-exist"> <img src="https://cdn.discordapp.com/emojis/708338924250202183.gif?quality=lossless">Email Already Exists</strong>
+                                alert;
+                             }
+                         }
+                         ?>
                         </div>
                         <div class="input-field">
                             <input type="password" class="input-box" name="password" id="password" oncontextmenu="return false;" required>

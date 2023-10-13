@@ -96,11 +96,11 @@ function validate(pswd, lowerCase, upperCase, numbers, special) {
 
     if (pswd.length < 8) {
         strength = 20;
-        setclrtxt("red", "too short");
+        setclrtxt("red", "<span style='display: inline-flex;width: 20px;height: 20px;background-image: url(\"https://cdn.discordapp.com/emojis/948086805364867142.gif\");background-size:contain;background-repeat: no-repeat;padding-left: 28px;'></span>too short");
     } else {
         if (lowerCase || upperCase || numbers || special) {
             strength = 40;
-            setclrtxt("rgb(243, 104, 104)", "Weak"); // weak
+            setclrtxt("rgb(243, 104, 104)", "<span style='display: inline-flex;width: 20px;height: 20px;background-image: url(\"https://cdn.discordapp.com/emojis/830485349855395850.gif\");background-size:contain;background-repeat: no-repeat;padding-left: 28px;''></span>Weak"); // weak
         }
 
         if (
@@ -108,19 +108,19 @@ function validate(pswd, lowerCase, upperCase, numbers, special) {
             (upperCase && numbers) || (upperCase && special) || (numbers && special)
         ) {
             strength = 60;
-            setclrtxt("orange", "Medium");	// medium		
+            setclrtxt("orange", "<span style='display: inline-flex;width: 20px;height: 20px;background-image: url(\"https://cdn.discordapp.com/emojis/858553060351148052.gif\");background-size:contain;background-repeat: no-repeat;padding-left: 28px;''></span>Medium");	// medium		
         }
 
         if ((lowerCase && upperCase && numbers) || (lowerCase && upperCase && special) ||
             (lowerCase && numbers && special) || (upperCase && numbers && special)
         ) {
             strength = 80;
-            setclrtxt("#17cf30", "Strong");	// strong
+            setclrtxt("#17cf30", "<span style='display: inline-flex;width: 20px;height: 20px;background-image: url(\"https://cdn.discordapp.com/emojis/893861118899023892.gif\");background-size:contain;background-repeat: no-repeat;padding-left: 28px;''></span>Strong");	// strong
         }
 
         if (lowerCase && upperCase && numbers && special) {
             strength = 100;
-            setclrtxt("#45f976", "Very Strong");	// very strong
+            setclrtxt("#45f976", "<span style='display: inline-flex;width: 20px;height: 20px;background-image: url(\"https://cdn.discordapp.com/emojis/592316208645275649.gif\");background-size:contain;background-repeat: no-repeat;padding-left: 28px;''></span>Very Strong");	// very strong
         }
     }
     setstrength(strength);
@@ -132,11 +132,11 @@ function chkpass() {
         mismatch.innerHTML = "";
     }
     else if (pass.value !== cpass.value) {
-        mismatch.innerHTML = "Password Mismatched";
+        mismatch.innerHTML = "<span style='display: inline-flex;width: 20px;height: 20px;background-image: url(\"https://cdn.discordapp.com/emojis/928948337963597824.gif\");background-size:contain;background-repeat: no-repeat;'></span>Password Mismatched";
         mismatch.style.color = "#c12828";
         registerBtn.disabled = true;
     } else {
-        mismatch.innerHTML = "Password Matched"
+        mismatch.innerHTML = "<span style='display: inline-flex;width: 20px;height: 20px;background-image: url(\"https://cdn.discordapp.com/emojis/857564823172153345.gif\");background-size:contain;background-repeat: no-repeat;'></span>Password Matched"
         mismatch.style.color = "#45f976";
         btnfunc();
     }

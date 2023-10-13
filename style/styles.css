@@ -10,17 +10,19 @@ body{
     background: url("https://wallpapercave.com/wp/wp5230816.jpg");
     background-size: cover;
 }
+
 .container{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
+
 .box{
     display: flex;
     position: relative;
     padding: 60px 20px 30px 20px;
-    height: 620px;
+    height: 640px;
     width: 350px;
     background-color: transparent;
     border-radius: 30px;
@@ -158,6 +160,20 @@ input.register{
     color: #000;
 }
 
+.em-exist {
+    font-size: 14px;
+    position: relative;
+    left: 15px;
+    color: red;
+}
+
+.em-exist img {
+  position: relative;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+}
+
 span {
     position: relative;
     text-align: center;
@@ -178,7 +194,7 @@ span {
 
 #pswd-cri{
     position: absolute;
-    width: 300px;
+    width: 325px;
     padding: 1px 1px 10px 55px;
     background-color: transparent;
     backdrop-filter: blur(8px);
@@ -269,15 +285,13 @@ h6.txt-info {
 }
 
 .invalid::before {
-    content: "\f00d";
-    font: normal normal normal 14px/1 FontAwesome;
+    content: url('https://cdn.discordapp.com/emojis/941237813536501820.gif?size=40&quality=lossless');
     margin-right: 5px;
     margin-left: -20px;
 }
 .valid::before {
-    content: "\f00c";
+    content: url('https://cdn.discordapp.com/emojis/822420774886572053.gif?size=40&quality=lossless');
     margin-right: 5px;
-    font: normal normal normal 14px/1 FontAwesome;
     margin-left: -20px;
 }
 
