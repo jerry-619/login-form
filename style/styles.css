@@ -100,6 +100,17 @@ body{
     font-weight: 500;
 }
 
+#toggle{
+    position: absolute;
+    right: 12px;
+    top: 51%;
+    cursor: pointer;
+    width: 20px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+
 
 .input-submit{
     width: 100%;

@@ -58,7 +58,7 @@ if (isset($_POST['register'])) {
                             <label for="username">Username</label>
                         </div>
                         <div class="input-field">
-                            <input type="text" class="input-box" name="email" id="email" required>
+                            <input type="email" class="input-box" name="email" id="email" required>
                             <label for="email">Email address</label>
                             <?php 
                             if (isset($_GET['alert'])) {

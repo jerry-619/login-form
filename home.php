@@ -264,21 +264,6 @@ if (isset($_GET['edit']) && $_GET['edit'] > 0) {
         padding-top: 40px;
     }
 
-    a {
-        cursor: pointer
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    .password {
-        cursor: pointer
-    }
-
-    .image {
-        margin-top: -100px;
-    }
 
     .ui.segment {
         padding: 2rem;
@@ -288,10 +273,6 @@ if (isset($_GET['edit']) && $_GET['edit'] > 0) {
         height: 46px;
     }
 
-    .logo {
-        height: 26px !important;
-        width: auto;
-    }
 
     .greeting {
         color: rgba(255, 255, 255, 0.5) !important;
@@ -327,16 +308,7 @@ if (isset($_GET['edit']) && $_GET['edit'] > 0) {
         background-color: #28556f !important;
     }
 
-    /* .menu {} */
 
-    .company-name {
-        font-weight: bold !important;
-        color: #212121;
-    }
-
-    .company-name:hover {
-        color: #212121;
-    }
 
     @media only screen and (max-width: 767px) {
 

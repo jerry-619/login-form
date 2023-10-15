@@ -5,6 +5,12 @@ if (isset($_POST['login'])) {
 
     $username = mysqli_real_escape_string($db, trim($_POST['username']));
     $password = mysqli_real_escape_string($db, trim($_POST['password']));
+    $chkuser = "SELECT * FROM users where name = '$username'";
+    $result = mysqli_query($db, $chkuser);
+    $count = mysqli_num_rows($result);
+    $chkpass = "SELECT * FROM users where password = '$password'";
+    $result2 = mysqli_query($db, $chkpass);
+    $count2 = mysqli_num_rows($result2);
     $pass = md5($password);
     $sql = "SELECT * FROM users WHERE name  = '$username' AND password = '$pass'";
     $result = mysqli_query($db, $sql);
@@ -26,10 +32,10 @@ if (isset($_POST['login'])) {
                 setcookie('remember_password', $cookie_password, time() + $cookie_duration, '/');
             }
             header('Location: home.php');
+        } else if ($count > 0 && $count2 <= 0) {
+            header("location: login.php?alert=invalid_password");
         } else {
-            echo "<script>
-               alert('Invalid username or password OR \\nYou don\'t have an account. Please Register now.');
-            </script>";
+            header("location: login.php?alert=notfound");
         }
     }
     mysqli_close($db);
@@ -43,9 +49,9 @@ if (isset($_POST['login'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/styles.css">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style/styles.css">
     <title>Login Page</title>
 </head>
 
@@ -73,10 +79,28 @@ if (isset($_POST['login'])) {
                         <div class="input-field">
                             <input type="text" class="input-box" name="username" id="username" required>
                             <label for="username">Username</label>
+                            <?php
+                            if (isset($_GET['alert'])) {
+                                if ($_GET['alert'] == 'notfound') {
+                                    echo <<< alert
+                                 <strong class="em-exist"> <img src="https://cdn.discordapp.com/emojis/708338924250202183.gif?quality=lossless">No Account Found. Register Now.</strong>
+                                alert;
+                                }
+                            }
+                            ?>
                         </div>
                         <div class="input-field">
-                            <input type="password" class="input-box" name="password" id="password" required>
+                        <input type="password" class="input-box" name="password" id="password" required>
                             <label for="password">Password</label>
+                            <?php
+                            if (isset($_GET['alert'])) {
+                                if ($_GET['alert'] == 'invalid_password') {
+                                    echo <<< alert
+                                 <strong class="em-exist"> <img src="https://cdn.discordapp.com/emojis/708338924250202183.gif?quality=lossless">Invaild Password</strong>
+                                alert;
+                                }
+                            }
+                            ?>
                         </div>
                         <div class="remember">
                             <input type="checkbox" name="chk" id="chk" class="check">
@@ -97,8 +121,9 @@ if (isset($_POST['login'])) {
 
         </div>
     </div>
-    <script src="js/script.js"></script>
+ 
 </body>
+<script src="js/script.js"></script>
 </html>
 <?php
 if (!empty($_COOKIE['remember_username']) && !empty($_COOKIE['remember_password'])) {
